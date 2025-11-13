@@ -900,9 +900,6 @@ in the Software without restriction...
 
 ## Project Status
 
-![Build Status](https://github.com/LennyBeto/online-poll-system/workflows/CI/badge.svg)
-![Coverage](https://codecov.io/gh/LennyBeto/online-poll-system/branch/main/graph/badge.svg)
-![Code Quality](https://img.shields.io/codacy/grade/YOUR_PROJECT_ID)
 
 **Current Version**: 1.0.0  
 **Status**: Active Development  
@@ -916,6 +913,5 @@ Made with ❤️ by [Lenny Beto](https://github.com/LennyBeto)
 
 ⭐ Star this repo if you find it helpful!
 
-[Report Bug](https://github.com/LennyBeto/online-poll-system/issues) · [Request Feature](https://github.com/LennyBeto/online-poll-system/issues) · [Documentation](https://docs.LennyBeto.com)
 
 </div>
