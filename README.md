@@ -912,7 +912,7 @@ in the Software without restriction...
 
 <div align="center">
 
-Made with ❤️ by [Your Name](https://github.com/LennyBeto)
+Made with ❤️ by [Lenny Beto](https://github.com/LennyBeto)
 
 ⭐ Star this repo if you find it helpful!
 
