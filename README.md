@@ -17,7 +17,7 @@ This project is a scalable backend system for creating and managing online polls
 
 ---
 
-## ✨ Features
+## Features
 
 ### Core Functionality
 
