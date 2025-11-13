@@ -2,27 +2,6 @@
 
 A production-ready REST API backend for real-time online polling with advanced analytics, user authentication, and comprehensive documentation.
 
----
-
-## Table of Contents
-
-- [Overview](#-overview)
-- [Features](#-features)
-- [Architecture](#-architecture)
-- [Technologies](#-technologies)
-- [Quick Start](#-quick-start)
-- [Project Structure](#-project-structure)
-- [API Documentation](#-api-documentation)
-- [Development Guide](#-development-guide)
-- [Testing](#-testing)
-- [Deployment](#-deployment)
-- [Configuration](#-configuration)
-- [Performance](#-performance)
-- [Security](#-security)
-- [Contributing](#-contributing)
-- [License](#-license)
-
----
 
 ## Overview
 
