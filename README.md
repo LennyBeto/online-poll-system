@@ -13,7 +13,7 @@ This project is a scalable backend system for creating and managing online polls
 - **Comprehensive API**: RESTful endpoints with complete Swagger documentation
 - **Production Ready**: Docker, CI/CD, monitoring, and security hardening included
 
-**Perfect for**: Learning backend development, building voting systems, creating survey platforms, or as a portfolio project demonstrating production-ready API development.
+**Perfect for**:  Learning backend development, building voting systems, creating survey platforms, or as a portfolio project demonstrating production-ready API development.
 
 ---
 
