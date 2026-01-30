@@ -248,6 +248,7 @@ if not DEBUG:
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
     X_FRAME_OPTIONS = 'DENY'
+    
 Step 1.5: Create Environment File
 Create .env:
 bash# .env
