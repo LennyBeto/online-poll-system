@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 from pathlib import Path
 from decouple import config
 import os
+import environ
 
 # Initialize environ
 env = environ.Env(
@@ -24,7 +25,7 @@ env = environ.Env(
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Read the .env file
-os.environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
@@ -247,17 +248,4 @@ if not DEBUG:
     CSRF_COOKIE_SECURE = True
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
-    X_FRAME_OPTIONS = 'DENY'
-    
-Step 1.5: Create Environment File
-Create .env:
-bash# .env
-DEBUG=True
-SECRET_KEY=your-secret-key-here-generate-a-strong-one
-DATABASE_NAME=pollsystem
-DATABASE_USER=postgres
-DATABASE_PASSWORD=your-database-password
-DATABASE_HOST=localhost
-DATABASE_PORT=5432
-ALLOWED_HOSTS=localhost,127.0.0.1
-CORS_ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
+X_FRAME_OPTIONS = 'DENY'
