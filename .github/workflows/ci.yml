@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:14
+        env:
+          POSTGRES_DB: pollsystem_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+      redis:
+        image: redis:7
+        ports: ["6379:6379"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        env:
+          SECRET_KEY: ci-secret-key
+          DEBUG: "True"
+          DATABASE_NAME: pollsystem_test
+          DATABASE_USER: postgres
+          DATABASE_PASSWORD: postgres
+          DATABASE_HOST: localhost
+          DATABASE_PORT: "5432"
+          REDIS_URL: redis://localhost:6379/1
+        run: |
+          mkdir -p logs
+          pytest --cov=polls --cov=accounts --cov=analytics --cov-report=xml
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage.xml
+```
+
+---
+
+**`.env.example`**
+```
+SECRET_KEY=change-me-in-production
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
+DATABASE_NAME=pollsystem
+DATABASE_USER=postgres
+DATABASE_PASSWORD=postgres
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+REDIS_URL=redis://localhost:6379/1
+CORS_ALLOWED_ORIGINS=http://localhost:3000
+SENTRY_DSN=
